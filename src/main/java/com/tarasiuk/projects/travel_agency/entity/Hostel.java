@@ -1,22 +1,19 @@
 package com.tarasiuk.projects.travel_agency.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "hostel")
+public class Hostel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(name = "name", unique = true, nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "user")
-    @JsonIgnore
-    private List<Travel> travels;
+    @Column(name = "stars_count", unique = true, nullable = false)
+    private int starsCount;
 
     public long getId() {
         return id;
@@ -30,11 +27,11 @@ public class User {
         this.name = name;
     }
 
-    public List<Travel> getTravels() {
-        return travels;
+    public int getStarsCount() {
+        return starsCount;
     }
 
-    public void setTravels(List<Travel> travels) {
-        this.travels = travels;
+    public void setStarsCount(int starsCount) {
+        this.starsCount = starsCount;
     }
 }

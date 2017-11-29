@@ -14,17 +14,17 @@ public class TravelController {
     private TravelService travelService;
 
     @GetMapping("/getAll")
-    public List<Travel> getAllTravels(){
-        return travelService.getAll();
+    public List<Travel> getAllHostels(){
+        return travelService.getAllObjects();
     }
 
     @GetMapping("/get")
-    public Travel getTravel(@RequestParam("id") long id){
-        return travelService.get(id);
+    public Travel getHostel(@RequestParam("id") long id){
+        return travelService.getObject(id);
     }
 
     @PostMapping("/save")
     public void save(@RequestBody Travel travel) {
-        travelService.save(travel);
+        travelService.addObject(travel);
     }
 }
