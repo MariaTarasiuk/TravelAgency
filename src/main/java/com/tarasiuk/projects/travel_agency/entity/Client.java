@@ -18,7 +18,7 @@ public class Client {
     @Column(name = "passport", unique = true, nullable = false)
     private String passport;
 
-    @OneToMany(mappedBy = "travel_id")
+    @OneToMany
     @JsonIgnore
     private List<Travel> travels;
 
@@ -26,7 +26,7 @@ public class Client {
     private String type;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_travel_agent", unique = false, nullable = false)
+    @JoinColumn(name = "id_travel_agen", unique = false, nullable = false)
     private TravelAgent travelAgent;
 
     public long getId() {

@@ -1,0 +1,7 @@
+package com.tarasiuk.projects.travel_agency.springData;
+
+import com.tarasiuk.projects.travel_agency.entity.TravelAgent;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TravelAgentRepository extends JpaRepository<TravelAgent,Long> {
+}

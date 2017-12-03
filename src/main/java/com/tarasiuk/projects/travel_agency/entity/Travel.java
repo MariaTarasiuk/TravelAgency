@@ -22,8 +22,8 @@ public class Travel {
     @JoinColumn(name = "id_hostel", unique = true, nullable = false)
     private Hostel hostel;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_excurcion", unique = true, nullable = false)
+    @OneToMany
+    //@JoinColumn(name = "id_excurcion", unique = true, nullable = false)
     private List<Excurcion> excurcion;
 
     @Column(name = "continuance", unique = false, nullable = false)
